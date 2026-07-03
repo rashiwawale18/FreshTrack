@@ -7,7 +7,7 @@ FreshTrack is an intelligent, real-time food preservation and management system.
 ## 🚀 Key Features
 
 * **Centralized ML Pipeline**:
-  * **YOLOv5 Object Detection**: Recognizes food items (like Apples, Lemons, Tomatoes) and crops individual items dynamically.
+  * **YOLOv8n Object Detection**: Recognizes food items (like Apples, Lemons, Tomatoes) and crops individual items dynamically.
   * **Keras CNN Freshness Predictor**: Analyzes cropped images to calculate freshness percentages.
   * **Random Forest Shelf Life Estimator**: Estimates remaining shelf life using custom parameters like freshness score, storage temperature, humidity, and gas resistance.
 * **Smart Dashboard & Telemetry**:
@@ -29,7 +29,7 @@ FreshTrack is an intelligent, real-time food preservation and management system.
 | :--- | :--- |
 | **Frontend** | React 19, Vite, Tailwind CSS v4, Framer Motion, Lucide Icons |
 | **Backend** | Flask (Python), SQLite3, Bcrypt |
-| **Machine Learning** | TensorFlow, Keras, Ultralytics YOLOv8/v5, Joblib, NumPy, Pillow |
+| **Machine Learning** | TensorFlow, Keras, Ultralytics YOLOv8n, Joblib, NumPy, Pillow |
 
 ---
 
@@ -39,7 +39,7 @@ FreshTrack is an intelligent, real-time food preservation and management system.
 graph TD
     User([User App / Smart Camera]) -->|1. Image Upload / API Call| Flask[Flask API Server]
     Flask -->|2. Invoke ML Engine| Engine[FreshTrackEngine]
-    Engine -->|3. Detect Items| YOLO[YOLOv5 Model]
+    Engine -->|3. Detect Items| YOLO[YOLOv8n Model]
     Engine -->|4. Analyze Crop Spoilage| CNN[Keras CNN Model]
     Engine -->|5. Regress Shelf Life| RF[Random Forest Model]
     
@@ -145,3 +145,17 @@ Ensure you have **Python 3.10+** and **Node.js (v18+)** installed.
 
 ## 📄 License
 This project is for educational and mini-project purposes. All rights reserved.
+
+## 👥 Team Project Acknowledgement
+
+FreshTrack was developed as a collaborative college mini project by a team of students. This fork highlights my individual contributions while acknowledging the efforts of the entire team.
+
+### 👩‍💻 My Contributions
+
+I was primarily responsible for designing, training, and integrating the machine learning models used in FreshTrack. My contributions include:
+
+- Trained the **YOLOv8n object detection model** using a custom dataset prepared and managed with **Roboflow**.
+- Designed, trained, and evaluated the **CNN-based freshness prediction model** using **TensorFlow/Keras** on **Google Colab**.
+- Developed and trained the **Random Forest shelf-life prediction model** for estimating the remaining shelf life of detected food items.
+- Performed dataset preparation, image annotation, preprocessing, model training, evaluation, and hyperparameter tuning to improve model performance.
+- Integrated the trained machine learning models into the FreshTrack pipeline for real-time food detection, freshness prediction, and shelf-life estimation.
